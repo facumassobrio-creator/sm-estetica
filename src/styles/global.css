@@ -38,6 +38,22 @@ a:hover, a:focus {
 .transition-base {
 	@apply transition-all duration-200 ease-in-out;
 }
+
+/* Botones reutilizables */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded px-5 py-2 font-medium transition-base focus:outline-none focus-visible:ring-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-naranja text-white shadow hover:bg-naranja/90;
+  }
+  .btn-secondary {
+    @apply btn bg-white border border-azul text-azul hover:bg-celeste;
+  }
+  .btn-link {
+    @apply text-azul hover:underline;
+  }
+}
 .fade-in {
 	opacity: 0;
 	animation: fadeIn 0.7s ease forwards;
