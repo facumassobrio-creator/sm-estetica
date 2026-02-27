@@ -1,9 +1,9 @@
 export const site = {
   nombre: "SM Estética",
   descripcion: "Centro de estética profesional en tu ciudad.",
-  telefono: "+54 9 11 1234-5678",
-  email: "info@smestetica.com",
-  whatsapp: "+54 9 11 1234-5678",
+  telefono: "+5491112345678",
+  email: "contacto@smestetica.com",
+  whatsapp: "+5491112345678",
   instagram: "@smestetica",
   direccion: "Av. Siempre Viva 123, Ciudad, País",
   googleMapsEmbedUrl: "https://www.google.com/maps?q=Buenos+Aires&output=embed",
