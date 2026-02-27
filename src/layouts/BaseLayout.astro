@@ -1,0 +1,43 @@
+---
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import { site } from '../config/site.js';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'SM Estética', description = '' }: Props = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description || site.descripcion} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || site.descripcion} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description || site.descripcion} />
+
+    <link rel="stylesheet" href="/src/styles/global.css">
+    <link rel="icon" href="/src/assets/images/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1 pt-8 md:pt-12 px-4">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="SM Estética" description="Inicio de SM Estética, tu clínica premium de estética médica">
+  {/* HERO */}
+  <section class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 py-12 fade-in">
+    <div class="flex-1 flex flex-col gap-4 items-start">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-azul mb-2">SM Estética</h1>
+      <h2 class="text-lg md:text-xl text-azul/80 font-semibold mb-1">Odontología • Cirugía Estética • Dermatología</h2>
+      <p class="text-base text-text mb-4">Tu bienestar y confianza en manos profesionales.</p>
+      <div class="flex gap-3 mt-2">
+        <a href={`https://wa.me/${import('../config/site.js').then(m => m.site.whatsapp.replace(/\D/g, ''))}`} target="_blank" rel="noopener" class="px-5 py-2 rounded bg-naranja/90 text-white font-semibold shadow hover:bg-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja text-base">Reservar por WhatsApp</a>
+        <a href="/ubicacion" class="px-5 py-2 rounded border border-azul text-azul font-semibold hover:bg-celeste transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja text-base">Ver ubicación</a>
+      </div>
+    </div>
+    <div class="flex-1 flex items-center justify-center w-full md:w-auto">
+      <div class="w-64 h-64 md:w-80 md:h-80 bg-celeste flex items-center justify-center rounded-xl shadow-inner text-azul text-xl font-semibold slide-up select-none">Imagen</div>
+    </div>
+  </section>
+
+  {/* SERVICIOS */}
+  <section class="max-w-6xl mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+    {[
+      { title: 'Odontología', icon: '🦷' },
+      { title: 'Cirugía estética', icon: '💉' },
+      { title: 'Dermatología', icon: '🧴' },
+    ].map((servicio, i) => (
+      <div data-key={servicio.title} class="bg-white rounded-xl shadow hover:shadow-lg transition-base p-8 flex flex-col items-center text-center gap-3 border border-celeste/40 group slide-up" style={{ animationDelay: `${i * 0.1 + 0.2}s` }}>
+        <div class="text-4xl mb-2">{servicio.icon}</div>
+        <h3 class="text-xl font-bold text-azul">{servicio.title}</h3>
+        <p class="text-text text-sm">Especialidad profesional.</p>
+      </div>
+    ))}
+  </section>
+
+  {/* VIDEO */}
+  <section class="max-w-4xl mx-auto py-10 fade-in">
+    <h2 class="text-2xl font-bold text-azul mb-4">Conocé el consultorio</h2>
+    <div class="w-full aspect-video bg-celeste flex items-center justify-center rounded-xl shadow-inner text-azul text-lg font-semibold slide-up select-none">Video</div>
+  </section>
+
+  {/* GALERÍA */}
+  <section class="max-w-6xl mx-auto py-10 grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+    {[1,2,3,4].map(n => (
+      <div class="aspect-[4/3] bg-celeste flex items-center justify-center rounded-xl shadow-inner text-azul text-lg font-semibold hover:shadow-lg transition-base slide-up select-none">Foto {n}</div>
+    ))}
+  </section>
+
+  {/* CTA FINAL */}
+  <section class="max-w-2xl mx-auto py-10 flex flex-col items-center gap-4 fade-in">
+    <h3 class="text-xl font-bold text-azul">¿Listo para tu cambio?</h3>
+    <a href={`https://wa.me/${import('../config/site.js').then(m => m.site.whatsapp.replace(/\D/g, ''))}`} target="_blank" rel="noopener" class="px-6 py-2 rounded bg-naranja/90 text-white font-semibold shadow hover:bg-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja text-base">Reservar por WhatsApp</a>
+  </section>
+</BaseLayout>
