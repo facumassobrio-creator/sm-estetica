@@ -16,32 +16,42 @@ const success = Astro.url.searchParams.get('success');
     <p class="text-lg text-azul/80">Estamos aquí para ayudarte, escríbenos o visita nuestras redes.</p>
   </section>
 
-  <!-- Tarjetas de contacto -->
-  <section class="max-w-6xl mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
-    <div class="bg-white rounded-xl shadow hover:shadow-lg transition-base p-6 flex flex-col items-center text-center gap-4 border border-celeste/40 slide-up">
-      <div class="text-5xl">💬</div>
-      <h3 class="text-xl font-semibold text-azul">WhatsApp</h3>
-      <p class="text-text text-sm">{site.whatsapp}</p>
-      <a href={`https://wa.me/${site.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noopener" class="btn btn-primary mt-2">Escribir por WhatsApp</a>
+  <!-- Sección Doctores -->
+  <section class="max-w-6xl mx-auto py-12 space-y-6 fade-in">
+    <div class="bg-white rounded-xl border border-celeste/40 shadow-sm p-6 slide-up">
+      <h2 class="text-3xl font-bold text-azul mb-1">Doctores</h2>
+      <p class="text-text text-sm">Consultas directas para cada doctor.</p>
     </div>
-    <div class="bg-white rounded-xl shadow hover:shadow-lg transition-base p-6 flex flex-col items-center text-center gap-4 border border-celeste/40 slide-up">
-      <div class="text-5xl">📞</div>
-      <h3 class="text-xl font-semibold text-azul">Teléfono</h3>
-      <p class="text-text text-sm">{site.telefono}</p>
-      <a href={`tel:${site.telefono.replace(/\D/g,'')}`} class="mt-2 px-6 py-2 rounded border border-azul text-azul font-semibold hover:bg-celeste transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja">Llamar</a>
-    </div>
-    <div class="bg-white rounded-xl shadow hover:shadow-lg transition-base p-6 flex flex-col items-center text-center gap-4 border border-celeste/40 slide-up">
-      <div class="text-5xl">✉️</div>
-      <h3 class="text-xl font-semibold text-azul">Email</h3>
-      <p class="text-text text-sm">{site.email}</p>
-      <a href={`mailto:${site.email}`} class="mt-2 px-6 py-2 rounded border border-azul text-azul font-semibold hover:bg-celeste transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja">Enviar email</a>
-    </div>
-    <div class="bg-white rounded-xl shadow hover:shadow-lg transition-base p-6 flex flex-col items-center text-center gap-4 border border-celeste/40 slide-up">
-      <div class="text-5xl">📷</div>
-      <h3 class="text-xl font-semibold text-azul">Instagram</h3>
-      <p class="text-text text-sm">{site.instagram}</p>
-      <a href={`https://instagram.com/${site.instagram.replace('@','')}`} target="_blank" rel="noopener" class="mt-2 px-6 py-2 rounded border border-azul text-azul font-semibold hover:bg-celeste transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja">Ver Instagram</a>
-    </div>
+
+    <article class="bg-white rounded-xl border border-celeste/25 shadow-sm p-6 md:p-8 flex flex-col md:flex-row gap-4 items-center md:items-start">
+      <div class="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-500">
+        Foto
+      </div>
+      <div class="flex-1 space-y-2 text-left">
+        <h3 class="text-2xl font-semibold text-azul">Dr. Sergio Manuel Martinez</h3>
+        <p class="text-text"><span class="font-semibold">Especialidad:</span> Cirugía estética mini invasiva</p>
+        <p class="text-text"><span class="font-semibold">Teléfono:</span> 3794321439</p>
+        <p class="text-text"><span class="font-semibold">Mail:</span> <a href="mailto:smmdoc12@gmail.com" class="text-azul hover:text-naranja">smmdoc12@gmail.com</a></p>
+        <p class="text-text"><span class="font-semibold">Instagram:</span> <a href="https://instagram.com/sergiomartinez5040" target="_blank" rel="noopener" class="text-azul hover:text-naranja">@sergiomartinez5040</a></p>
+        <p class="text-text"><span class="font-semibold">Horarios:</span> Lunes a viernes de 16 a 20 hs</p>
+        <a href="https://api.whatsapp.com/send?phone=5493794321439" target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
+      </div>
+    </article>
+
+    <article class="bg-white rounded-xl border border-celeste/25 shadow-sm p-6 md:p-8 flex flex-col md:flex-row gap-4 items-center md:items-start">
+      <div class="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-500">
+        Foto
+      </div>
+      <div class="flex-1 space-y-2 text-left">
+        <h3 class="text-2xl font-semibold text-azul">Dr. José Manuel Martinez</h3>
+        <p class="text-text"><span class="font-semibold">Especialidad:</span> Odontología general, Ortodoncia, Implantes</p>
+        <p class="text-text"><span class="font-semibold">Teléfono:</span> 3794773524</p>
+        <p class="text-text"><span class="font-semibold">Mail:</span> <a href="mailto:mjm2130@outlook.com.ar" class="text-azul hover:text-naranja">mjm2130@outlook.com.ar</a></p>
+        <p class="text-text"><span class="font-semibold">Instagram:</span> <a href="https://instagram.com/odmartinez_jose" target="_blank" rel="noopener" class="text-azul hover:text-naranja">@odmartinez_jose</a></p>
+        <p class="text-text"><span class="font-semibold">Horarios:</span> Lunes a viernes de 16 a 20 hs</p>
+        <a href="https://api.whatsapp.com/send?phone=5493794773524" target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
+      </div>
+    </article>
   </section>
 
   <!-- Horario -->
