@@ -46,7 +46,7 @@ export const site = {
       email: "mjm2130@outlook.com.ar",
       instagram: "@odmartinez_jose",
       hours: "Lunes a viernes de 16 a 20 hs",
-      whatsapp: "5493794773524",
+      whatsapp: "+5493794773524",
     },
   ],
 
