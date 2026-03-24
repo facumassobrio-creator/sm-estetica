@@ -41,3 +41,41 @@ const navLinks = [
     </ul>
   </div>
 </header>
+
+<script is:inline>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuButton && mobileMenu) {
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      menuButton.setAttribute('aria-expanded', 'false');
+    };
+
+    const openMenu = () => {
+      mobileMenu.classList.remove('hidden');
+      menuButton.setAttribute('aria-expanded', 'true');
+    };
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(target) && !menuButton.contains(target)) {
+        closeMenu();
+      }
+    });
+  }
+</script>

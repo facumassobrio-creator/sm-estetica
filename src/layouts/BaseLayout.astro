@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { title = 'SM Estética', description = '' }: Props = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -19,12 +20,13 @@ const { title = 'SM Estética', description = '' }: Props = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description || site.brand.description} />
     <meta name="robots" content="index,follow" />
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description || site.brand.description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

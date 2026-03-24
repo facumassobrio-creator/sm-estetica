@@ -9,7 +9,7 @@ export const site = {
   contact: {
     phone: "+5491112345678",
     email: "contacto@smestetica.com",
-    whatsapp: "+543794321439",
+    whatsapp: "+5493794321439",
   },
 
   // Social
@@ -53,7 +53,7 @@ export const site = {
   // Form
   form: {
     endpoint: "https://formspree.io/f/xpqypyng",
-    redirectSuccess: "/contacto?success=1",
+    redirectSuccess: "https://smesteticaintegral.com.ar/contacto?success=1",
   },
 
   // Developer
@@ -64,7 +64,7 @@ export const site = {
   descripcion: "Centro de estética profesional en tu ciudad.",
   telefono: "+5491112345678",
   email: "contacto@smestetica.com",
-  whatsapp: "+543794321439",
+  whatsapp: "+5493794321439",
   instagram: "@smestetica",
   direccion: "Av. Siempre Viva 123, Ciudad, País",
   googleMapsEmbedUrl: "https://www.google.com/maps?q=Buenos+Aires&output=embed",
