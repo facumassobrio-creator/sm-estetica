@@ -10,7 +10,7 @@ const navLinks = [
 <header class="w-full bg-white/90 backdrop-blur border-b border-celeste/40 shadow-sm sticky top-0 z-30 transition-base">
   <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
     <a href="/" class="font-bold text-2xl text-azul tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja transition-base" aria-label="Inicio">
-      {site.nombre}
+      {site.brand.name}
     </a>
     <button class="md:hidden flex items-center px-2 py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja transition-base" aria-label="Abrir menú" id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu">
       <svg class="w-7 h-7 text-azul" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
@@ -22,7 +22,7 @@ const navLinks = [
         <li><a href={link.href} class="text-base text-azul hover:text-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja px-2 py-1 rounded">{link.name}</a></li>
       ))}
       <li>
-        <a href={`https://wa.me/${site.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary text-sm ml-2" aria-label="WhatsApp">
+        <a href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary text-sm ml-2" aria-label="WhatsApp">
           WhatsApp
         </a>
       </li>
@@ -34,7 +34,7 @@ const navLinks = [
         <li><a href={link.href} class="block text-base text-azul hover:text-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja px-2 py-2 rounded">{link.name}</a></li>
       ))}
       <li>
-        <a href={`https://wa.me/${site.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary text-sm block text-center mt-2" aria-label="WhatsApp">
+        <a href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary text-sm block text-center mt-2" aria-label="WhatsApp">
           WhatsApp
         </a>
       </li>

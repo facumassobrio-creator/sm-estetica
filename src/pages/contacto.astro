@@ -23,42 +23,29 @@ const success = Astro.url.searchParams.get('success');
       <p class="text-text text-sm">Consultas directas para cada doctor.</p>
     </div>
 
-    <article class="bg-white rounded-xl border border-celeste/25 shadow-sm p-6 md:p-8 flex flex-col md:flex-row gap-4 items-center md:items-start">
-      <div class="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-500">
-        Foto
-      </div>
-      <div class="flex-1 space-y-2 text-left">
-        <h3 class="text-2xl font-semibold text-azul">Dr. Sergio Manuel Martinez</h3>
-        <p class="text-text"><span class="font-semibold">Especialidad:</span> Cirugía estética mini invasiva</p>
-        <p class="text-text"><span class="font-semibold">Teléfono:</span> 3794321439</p>
-        <p class="text-text"><span class="font-semibold">Mail:</span> <a href="mailto:smmdoc12@gmail.com" class="text-azul hover:text-naranja">smmdoc12@gmail.com</a></p>
-        <p class="text-text"><span class="font-semibold">Instagram:</span> <a href="https://instagram.com/sergiomartinez5040" target="_blank" rel="noopener" class="text-azul hover:text-naranja">@sergiomartinez5040</a></p>
-        <p class="text-text"><span class="font-semibold">Horarios:</span> Lunes a viernes de 16 a 20 hs</p>
-        <a href="https://api.whatsapp.com/send?phone=5493794321439" target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-xl border border-celeste/25 shadow-sm p-6 md:p-8 flex flex-col md:flex-row gap-4 items-center md:items-start">
-      <div class="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-500">
-        Foto
-      </div>
-      <div class="flex-1 space-y-2 text-left">
-        <h3 class="text-2xl font-semibold text-azul">Dr. José Manuel Martinez</h3>
-        <p class="text-text"><span class="font-semibold">Especialidad:</span> Odontología general, Ortodoncia, Implantes</p>
-        <p class="text-text"><span class="font-semibold">Teléfono:</span> 3794773524</p>
-        <p class="text-text"><span class="font-semibold">Mail:</span> <a href="mailto:mjm2130@outlook.com.ar" class="text-azul hover:text-naranja">mjm2130@outlook.com.ar</a></p>
-        <p class="text-text"><span class="font-semibold">Instagram:</span> <a href="https://instagram.com/odmartinez_jose" target="_blank" rel="noopener" class="text-azul hover:text-naranja">@odmartinez_jose</a></p>
-        <p class="text-text"><span class="font-semibold">Horarios:</span> Lunes a viernes de 16 a 20 hs</p>
-        <a href="https://api.whatsapp.com/send?phone=5493794773524" target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
-      </div>
-    </article>
+    {site.professionals.map((doctor) => (
+      <article class="bg-white rounded-xl border border-celeste/25 shadow-sm p-6 md:p-8 flex flex-col md:flex-row gap-4 items-center md:items-start">
+        <div class="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-500">
+          Foto
+        </div>
+        <div class="flex-1 space-y-2 text-left">
+          <h3 class="text-2xl font-semibold text-azul">{doctor.name}</h3>
+          <p class="text-text"><span class="font-semibold">Especialidad:</span> {doctor.specialty}</p>
+          <p class="text-text"><span class="font-semibold">Teléfono:</span> {doctor.phone}</p>
+          <p class="text-text"><span class="font-semibold">Mail:</span> <a href={`mailto:${doctor.email}`} class="text-azul hover:text-naranja">{doctor.email}</a></p>
+          <p class="text-text"><span class="font-semibold">Instagram:</span> <a href={`https://instagram.com/${doctor.instagram.replace('@','')}`} target="_blank" rel="noopener" class="text-azul hover:text-naranja">{doctor.instagram}</a></p>
+          <p class="text-text"><span class="font-semibold">Horarios:</span> {doctor.hours}</p>
+          <a href={`https://api.whatsapp.com/send?phone=${doctor.whatsapp}`} target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
+        </div>
+      </article>
+    ))}
   </section>
 
   <!-- Horario -->
   <section class="max-w-6xl mx-auto py-12 fade-in">
     <div class="bg-white rounded-xl border border-celeste/40 p-6 slide-up">
       <h3 class="text-xl font-semibold text-azul mb-2">Horario</h3>
-      <p class="text-text text-sm">Lunes a Viernes 9:00 a 18:00 (horario placeholder)</p>
+      <p class="text-text text-sm">{site.hours.general}</p>
     </div>
   </section>
 
@@ -70,12 +57,12 @@ const success = Astro.url.searchParams.get('success');
         ✅ Consulta enviada correctamente. Nos comunicaremos a la brevedad.
       </div>
     )}
-    <form action="https://formspree.io/f/xpqypyng" method="POST" class="max-w-md mx-auto flex flex-col gap-4 slide-up">
+    <form action={site.form.endpoint} method="POST" class="max-w-md mx-auto flex flex-col gap-4 slide-up">
       <!-- Campo honeypot para protección anti-spam -->
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" />
 
       <!-- Campo _next para redirección -->
-      <input type="hidden" name="_next" value="/contacto?success=1" />
+      <input type="hidden" name="_next" value={site.form.redirectSuccess} />
 
       <div>
         <label for="nombre" class="block text-sm font-medium text-azul mb-1">Nombre</label>

@@ -11,7 +11,7 @@ import { site } from '../config/site.js';
       <h2 class="text-lg md:text-xl text-azul/80 font-semibold mb-1">Odontología • Cirugía Estética • Dermatología</h2>
       <p class="text-base text-text mb-4">Tu bienestar y confianza en manos profesionales.</p>
       <div class="flex gap-3 mt-2">
-        <a href={`https://wa.me/${site.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
+        <a href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
         <a href="/ubicacion" class="btn btn-secondary">Ver ubicación</a>
       </div>
     </div>
@@ -51,6 +51,6 @@ import { site } from '../config/site.js';
   {/* CTA FINAL */}
   <section class="max-w-2xl mx-auto py-10 flex flex-col items-center gap-4 fade-in">
     <h3 class="text-xl font-bold text-azul">¿Listo para tu cambio?</h3>
-    <a href={`https://wa.me/${site.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
+    <a href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
   </section>
 </BaseLayout>

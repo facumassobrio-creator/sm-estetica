@@ -17,19 +17,19 @@ const { title = 'SM Estética', description = '' }: Props = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <meta name="description" content={description || site.descripcion} />
+    <meta name="description" content={description || site.brand.description} />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href={Astro.url.href} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description || site.descripcion} />
+    <meta property="og:description" content={description || site.brand.description} />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description || site.descripcion} />
+    <meta name="twitter:description" content={description || site.brand.description} />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
