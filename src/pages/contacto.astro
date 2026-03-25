@@ -9,7 +9,7 @@ const success = Astro.url.searchParams.get('success');
 // Email receptor: smesteticafgm@gmail.com
 // La redirección success en producción usa: https://smesteticaintegral.com.ar/contacto?success=1
 ---
-<BaseLayout title="Contacto - SM Estética" description="Contactá SM Estética por WhatsApp, teléfono o email">
+<BaseLayout title={`Contacto - ${site.brand.name}`} description={`Contactá ${site.brand.name} por WhatsApp, teléfono o email`}>
   <!-- Encabezado -->
   <section class="max-w-6xl mx-auto py-12 text-center fade-in">
     <h1 class="text-4xl md:text-5xl font-extrabold text-azul mb-2">Contacto</h1>

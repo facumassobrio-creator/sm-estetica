@@ -1,31 +1,31 @@
 export const site = {
   // Brand
   brand: {
-    name: "SM Estética",
-    description: "Centro de estética profesional en tu ciudad.",
+    name: "SM Estética Integral",
+    description: "Centro de estética integral profesional en tu ciudad.",
   },
 
   // Contact
   contact: {
-    phone: "+5491112345678",
-    email: "contacto@smestetica.com",
+    phone: "+5493794321439",
+    email: "smesteticafgm@gmail.com",
     whatsapp: "+5493794321439",
   },
 
   // Social
   social: {
-    instagram: "@smestetica",
+    instagram: "@smesteticaintegralctes",
   },
 
   // Location
   location: {
-    address: "Av. Siempre Viva 123, Ciudad, País",
-    googleMapsEmbedUrl: "https://www.google.com/maps?q=Buenos+Aires&output=embed",
+    address: "Santa Fé 1238 1er piso",
+    googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+F%C3%A9+1238+1er+piso&output=embed",
   },
 
   // Hours
   hours: {
-    general: "Lunes a Viernes 9:00 a 18:00",
+    general: "Lunes a viernes de 16 hs a 20 hs",
   },
 
   // Professionals
@@ -60,13 +60,13 @@ export const site = {
   developer: "FGM Digital",
 
   // Backward compatibility
-  nombre: "SM Estética",
-  descripcion: "Centro de estética profesional en tu ciudad.",
-  telefono: "+5491112345678",
-  email: "contacto@smestetica.com",
+  nombre: "SM Estética Integral",
+  descripcion: "Centro de estética integral profesional en tu ciudad.",
+  telefono: "+5493794321439",
+  email: "smesteticafgm@gmail.com",
   whatsapp: "+5493794321439",
-  instagram: "@smestetica",
-  direccion: "Av. Siempre Viva 123, Ciudad, País",
-  googleMapsEmbedUrl: "https://www.google.com/maps?q=Buenos+Aires&output=embed",
+  instagram: "@smesteticaintegralctes",
+  direccion: "Santa Fé 1238 1er piso",
+  googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+F%C3%A9+1238+1er+piso&output=embed",
   desarrollador: "FGM Digital"
 };

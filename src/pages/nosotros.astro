@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../config/site.js';
 ---
-<BaseLayout title="Nosotros - SM Estética" description="Conoce al equipo profesional de SM Estética">
+<BaseLayout title={`Nosotros - ${site.brand.name}`} description={`Conocé al equipo profesional de ${site.brand.name}`}>
   <!-- Encabezado -->
   <section class="max-w-6xl mx-auto py-12 text-center fade-in">
     <h1 class="text-4xl md:text-5xl font-extrabold text-azul mb-2">Nosotros</h1>
@@ -12,7 +12,7 @@ import { site } from '../config/site.js';
   <!-- La clínica -->
   <section class="max-w-6xl mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in">
     <div class="order-2 md:order-1">
-      <p class="text-text text-base leading-relaxed">En SM Estética brindamos atención integral con estándares médicos elevados. Nuestro espacio está diseñado para tu confort y seguridad.</p>
+      <p class="text-text text-base leading-relaxed">En {site.brand.name} brindamos atención integral con estándares médicos elevados. Nuestro espacio está diseñado para tu confort y seguridad.</p>
     </div>
     <div class="order-1 md:order-2 flex justify-center">
       <div class="w-full aspect-[4/3] bg-celeste flex items-center justify-center rounded-xl shadow-inner text-azul text-xl font-semibold slide-up select-none">Foto consultorio</div>

@@ -5,6 +5,7 @@ import { site } from '../../config/site.js';
   <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
     <div>
       <h2 class="font-bold text-xl text-azul mb-2">{site.brand.name}</h2>
+      <p>{site.hours.general}</p>
     </div>
     <div>
       <h3 class="font-semibold text-azul mb-1">Contacto</h3>
@@ -13,13 +14,10 @@ import { site } from '../../config/site.js';
           <a href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="hover:text-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja" aria-label="WhatsApp">WhatsApp</a>
         </li>
         <li>
-          <a href={`tel:${site.contact.phone.replace(/\D/g, '')}`} class="hover:text-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja" aria-label="Teléfono">{site.contact.phone}</a>
-        </li>
-        <li>
           <a href={`mailto:${site.contact.email}`} class="hover:text-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja" aria-label="Email">{site.contact.email}</a>
         </li>
         <li>
-          <a href={`https://instagram.com/${site.social.instagram.replace('@','')}`} target="_blank" rel="noopener" class="hover:text-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja" aria-label="Instagram">Instagram</a>
+          <a href={`https://instagram.com/${site.social.instagram.replace('@','')}`} target="_blank" rel="noopener" class="hover:text-naranja transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja" aria-label="Instagram">{site.social.instagram}</a>
         </li>
       </ul>
     </div>

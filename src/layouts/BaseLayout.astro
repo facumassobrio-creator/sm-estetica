@@ -9,7 +9,7 @@ interface Props {
   description?: string;
 }
 
-const { title = 'SM Estética', description = '' }: Props = Astro.props;
+const { title = site.brand.name, description = '' }: Props = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!DOCTYPE html>
