@@ -2,7 +2,11 @@ export const site = {
   // Brand
   brand: {
     name: "SM Estética Integral",
-    description: "Centro de estética integral profesional en tu ciudad.",
+    seoTitle: "SM Estética Integral | Estética y Odontología en Corrientes",
+    description: "Centro de estética integral en Corrientes. Tratamientos faciales, corporales y odontología estética. Atención profesional de lunes a viernes.",
+    keywords: "estética integral corrientes, tratamientos faciales corrientes, odontología estética corrientes, botox corrientes",
+    url: "https://smesteticaintegral.com.ar",
+    siteName: "SM Estética Integral",
   },
 
   // Contact

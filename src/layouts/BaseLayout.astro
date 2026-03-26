@@ -7,9 +7,14 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
 }
 
-const { title = site.brand.name, description = '' }: Props = Astro.props;
+const {
+  title = site.brand.seoTitle,
+  description = '',
+  keywords = site.brand.keywords,
+}: Props = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!DOCTYPE html>
@@ -19,6 +24,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description || site.brand.description} />
+    <meta name="keywords" content={keywords} />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href={canonicalUrl} />
 
@@ -27,6 +33,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:description" content={description || site.brand.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={site.brand.siteName} />
+    <meta property="og:locale" content="es_AR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -34,6 +42,27 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="twitter:description" content={description || site.brand.description} />
 
     <link rel="icon" href="/favicon-v2.png" type="image/png" />
+
+    <!-- Schema.org MedicalBusiness (JSON-LD) -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "SM Estética Integral",
+      "url": "https://smesteticaintegral.com.ar",
+      "telephone": "+5493794321439",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Santa Fé 1238 1er piso",
+        "addressLocality": "Corrientes",
+        "addressCountry": "AR"
+      },
+      "openingHours": "Mo-Fr 16:00-20:00",
+      "sameAs": [
+        "https://instagram.com/smesteticaintegralctes"
+      ]
+    }
+    </script>
 
     <!-- Google Tag Manager -->
     <script is:inline>
