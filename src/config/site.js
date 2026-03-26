@@ -24,6 +24,8 @@ export const site = {
   // Location
   location: {
     address: "Santa Fe 1238 1er piso, Corrientes Capital",
+    // Paste real Google Place ID here to prioritize business pin in iframe embed
+    googleMapsPlaceId: "0x94456c9f89d2e077:0x2121ac58746c4012",
     googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+Fe+1238+1er+piso,+Corrientes,+Argentina&output=embed",
   },
 
@@ -36,7 +38,7 @@ export const site = {
   professionals: [
     {
       name: "Dr. Sergio Manuel Martinez",
-      specialty: "Cirugía estética mini invasiva",
+      specialty: "Modelación corporal, lipo y lipo transferencia. Cirugía \"mini invasiva\"",
       phone: "3794321439",
       email: "smmdoc12@gmail.com",
       instagram: "@sergiomartinez5040",
