@@ -61,31 +61,15 @@ const success = Astro.url.searchParams.get('success');
   </section>
 
   <section class="max-w-6xl mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in">
-    <div class="order-2 md:order-1">
-      <p class="text-text text-base leading-relaxed">En {site.brand.name} brindamos atención integral con estándares médicos elevados. Nuestro espacio está diseñado para tu confort y seguridad.</p>
+    <div class="order-2 md:order-1 flex flex-col gap-4">
+      <p class="text-text text-base leading-relaxed">En {site.brand.name} ofrecemos un enfoque completo en salud y estética, combinando experiencia médica, tecnología y atención personalizada.</p>
+      <p class="text-text text-base leading-relaxed">Nuestro equipo está conformado por profesionales especializados en cirugía estética mini invasiva y odontología, abarcando tratamientos de ortodoncia, implantes y endodoncia, siempre bajo estándares clínicos elevados.</p>
+      <p class="text-text text-base leading-relaxed">Nos enfocamos en brindar resultados naturales, seguros y adaptados a cada paciente, en un entorno pensado para tu comodidad, confianza y bienestar.</p>
     </div>
     <div class="order-1 md:order-2 flex justify-center">
       <div class="w-full aspect-[4/3] rounded-xl shadow-inner slide-up overflow-hidden">
         <img src="/equipo.png" alt="Equipo de doctores SM Estética Integral" class="w-full h-full object-cover" loading="lazy" decoding="async" />
       </div>
-    </div>
-  </section>
-
-  <section class="max-w-6xl mx-auto py-12 fade-in">
-    <h3 class="text-2xl font-bold text-azul mb-6 text-center">Nuestro equipo</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[
-        { nombre: 'Dra. Nombre Apellido', especialidad: 'Odontología' },
-        { nombre: 'Dra. Nombre Apellido', especialidad: 'Cirugía estética' },
-        { nombre: 'Dra. Nombre Apellido', especialidad: 'Dermatología' },
-      ].map((p, i) => (
-        <div class="bg-white rounded-xl shadow hover:shadow-lg transition-base p-6 flex flex-col items-center text-center gap-3 border border-celeste/40 slide-up" style={{ animationDelay: `${i * 0.1 + 0.2}s` }}>
-          <div class="w-24 h-24 bg-celeste rounded-full flex items-center justify-center text-azul text-xl font-semibold">Foto</div>
-          <h4 class="text-lg font-semibold text-azul">{p.nombre}</h4>
-          <p class="text-text text-sm">{p.especialidad}</p>
-          <p class="text-text text-xs">Profesional especializado aquí.</p>
-        </div>
-      ))}
     </div>
   </section>
 
@@ -126,8 +110,8 @@ const success = Astro.url.searchParams.get('success');
           <h4 class="text-2xl font-semibold text-azul">{doctor.name}</h4>
           <p class="text-text"><span class="font-semibold">Especialidad:</span> {doctor.specialty}</p>
           <p class="text-text"><span class="font-semibold">Teléfono:</span> {doctor.phone}</p>
-          <p class="text-text"><span class="font-semibold">Mail:</span> <a href={`mailto:${doctor.email}`} class="text-azul hover:text-naranja">{doctor.email}</a></p>
-          <p class="text-text"><span class="font-semibold">Instagram:</span> <a href={`https://instagram.com/${doctor.instagram.replace('@','')}`} target="_blank" rel="noopener" class="text-azul hover:text-naranja">{doctor.instagram}</a></p>
+          {doctor.email && <p class="text-text"><span class="font-semibold">Mail:</span> <a href={`mailto:${doctor.email}`} class="text-azul hover:text-naranja">{doctor.email}</a></p>}
+          {doctor.instagram && <p class="text-text"><span class="font-semibold">Instagram:</span> <a href={`https://instagram.com/${doctor.instagram.replace('@','')}`} target="_blank" rel="noopener" class="text-azul hover:text-naranja">{doctor.instagram}</a></p>}
           <p class="text-text"><span class="font-semibold">Horarios:</span> {doctor.hours}</p>
           <a href={`https://api.whatsapp.com/send?phone=${doctor.whatsapp}`} target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
         </div>
