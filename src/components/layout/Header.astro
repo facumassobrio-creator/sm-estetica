@@ -1,15 +1,19 @@
 ---
 import { site } from '../../config/site.js';
+
+const isHome = Astro.url.pathname === '/';
+const sectionHref = (id) => (isHome ? `#${id}` : `/#${id}`);
+
 const navLinks = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Nosotros', href: '/nosotros' },
-  { name: 'Contacto', href: '/contacto' },
-  { name: 'Ubicación', href: '/ubicacion' },
+  { name: 'Inicio', href: sectionHref('inicio') },
+  { name: 'Nosotros', href: sectionHref('nosotros') },
+  { name: 'Contacto', href: sectionHref('contacto') },
+  { name: 'Ubicación', href: sectionHref('ubicacion') },
 ];
 ---
 <header class="w-full bg-white/90 backdrop-blur border-b border-celeste/40 shadow-sm sticky top-0 z-30 transition-base">
   <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-    <a href="/" class="font-bold text-2xl text-azul tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja transition-base" aria-label="Inicio">
+    <a href={sectionHref('inicio')} class="font-bold text-2xl text-azul tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja transition-base" aria-label="Inicio">
       {site.brand.name}
     </a>
     <button class="md:hidden flex items-center px-2 py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-naranja transition-base" aria-label="Abrir menú" id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu">
