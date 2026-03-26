@@ -3,6 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../config/site.js';
 
 const success = Astro.url.searchParams.get('success');
+const doctorPhotos = {
+  'Dr. Sergio Manuel Martinez': '/dr-sergio.png',
+  'Dr. José Manuel Martinez': '/dr-jose.png',
+  'Dra. Romero Maria Florencia': '/dra-romero.png',
+};
 ---
 
 <BaseLayout title={site.brand.name} description={`Inicio de ${site.brand.name}, tu clínica premium de estética médica`}>
@@ -103,8 +108,15 @@ const success = Astro.url.searchParams.get('success');
 
     {site.professionals.map((doctor) => (
       <article class="bg-white rounded-xl border border-celeste/25 shadow-sm p-6 md:p-8 flex flex-col md:flex-row gap-4 items-center md:items-start">
-        <div class="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-500">
-          Foto
+        <div class="w-28 h-28 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-500">
+          <img
+            src={doctorPhotos[doctor.name]}
+            alt={doctor.name}
+            class="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+            onerror="this.style.display='none'; this.parentElement.classList.add('bg-gray-200','flex','items-center','justify-center','text-sm','font-semibold','text-gray-500'); this.parentElement.appendChild(document.createTextNode('Foto'));"
+          />
         </div>
         <div class="flex-1 space-y-2 text-left">
           <h4 class="text-2xl font-semibold text-azul">{doctor.name}</h4>
