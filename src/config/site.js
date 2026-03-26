@@ -48,6 +48,15 @@ export const site = {
       hours: "Lunes a viernes de 16 a 20 hs",
       whatsapp: "+5493794773524",
     },
+    {
+      name: "Dra. Romero Maria Florencia",
+      specialty: "Endodoncia - Ortopedia",
+      phone: "3794258531",
+      email: "",
+      instagram: "",
+      hours: "",
+      whatsapp: "+5493794258531",
+    },
   ],
 
   // Form
