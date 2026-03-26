@@ -24,9 +24,7 @@ export const site = {
   // Location
   location: {
     address: "Santa Fe 1238 1er piso, Corrientes Capital",
-    // Paste real Google Place ID here to prioritize business pin in iframe embed
-    googleMapsPlaceId: "0x94456c9f89d2e077:0x2121ac58746c4012",
-    googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+Fe+1238+1er+piso,+Corrientes,+Argentina&output=embed",
+    googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.9101459531935!2d-58.83105320000001!3d-27.472056599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456c9f89d2e077%3A0x2121ac58746c4012!2sSM%20Est%C3%A9tica%20Integral!5e0!3m2!1ses-419!2sar!4v1774538114288!5m2!1ses-419!2sar",
   },
 
   // Hours

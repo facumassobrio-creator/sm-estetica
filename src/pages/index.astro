@@ -3,9 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../config/site.js';
 
 const success = Astro.url.searchParams.get('success');
-const mapEmbedUrl = site.location.googleMapsPlaceId
-  ? `https://www.google.com/maps?q=place_id:${site.location.googleMapsPlaceId}&output=embed`
-  : site.location.googleMapsEmbedUrl;
 const doctorPhotos = {
   'Dr. Sergio Manuel Martinez': '/dr-sergio.png',
   'Dr. José Manuel Martinez': '/dr-jose.png',
@@ -190,7 +187,7 @@ const doctorPhotos = {
     </div>
     <div class="flex justify-center">
       <div class="w-full aspect-video rounded-xl overflow-hidden shadow-inner slide-up border-2 border-naranja">
-        <iframe src={mapEmbedUrl} class="w-full h-full" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe src={site.location.googleMapsEmbedUrl} class="w-full h-full" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
     </div>
   </section>
