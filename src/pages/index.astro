@@ -11,7 +11,7 @@ const success = Astro.url.searchParams.get('success');
     <div class="flex-1 md:basis-[55%] flex flex-col gap-4 items-start justify-center">
       <h1 class="sr-only">SM Estética Integral</h1>
       <img src="/logo-sm-estetica-v2.png" alt="SM Estética Integral" class="w-96 md:w-[34rem] lg:w-[38rem] h-auto mb-8 mx-auto md:mx-0" loading="eager" decoding="async" />
-      <h2 class="text-lg md:text-xl text-azul/80 font-semibold mb-1">Odontología • Cirugía estética • Ortodoncia • Implantes • Endodoncia</h2>
+      <h2 class="text-lg md:text-xl text-azul/80 font-semibold mb-1">Odontología • Cirugía estética • Endodoncia</h2>
       <p class="text-base text-text mb-4">Tu bienestar y confianza en manos profesionales.</p>
       <div class="flex gap-3 mt-2">
         <a href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
@@ -29,9 +29,9 @@ const success = Astro.url.searchParams.get('success');
   {/* SERVICIOS */}
   <section class="max-w-6xl mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
     {[
-      { title: 'Odontología', icon: '🦷', description: 'General, ortodoncia, implantes y endodoncia' },
+      { title: 'Odontología', icon: '🦷', description: 'General, ortodoncia e implantes' },
       { title: 'Cirugía estética', icon: '💉', description: 'Procedimientos mini invasivos' },
-      { title: 'Especialidades', icon: '🧴', description: 'Atención profesional integral' },
+      { title: 'Endodoncia', icon: '🦷', description: 'Tratamientos de conducto' },
     ].map((servicio, i) => (
       <div data-key={servicio.title} class="bg-white rounded-xl shadow hover:shadow-lg transition-base p-8 flex flex-col items-center text-center gap-3 border border-celeste/40 group slide-up" style={{ animationDelay: `${i * 0.1 + 0.2}s` }}>
         <div class="text-4xl mb-2">{servicio.icon}</div>
