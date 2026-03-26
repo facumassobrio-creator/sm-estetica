@@ -65,7 +65,9 @@ const success = Astro.url.searchParams.get('success');
       <p class="text-text text-base leading-relaxed">En {site.brand.name} brindamos atención integral con estándares médicos elevados. Nuestro espacio está diseñado para tu confort y seguridad.</p>
     </div>
     <div class="order-1 md:order-2 flex justify-center">
-      <div class="w-full aspect-[4/3] bg-celeste flex items-center justify-center rounded-xl shadow-inner text-azul text-xl font-semibold slide-up select-none">Foto consultorio</div>
+      <div class="w-full aspect-[4/3] rounded-xl shadow-inner slide-up overflow-hidden">
+        <img src="/equipo.png" alt="Equipo de doctores SM Estética Integral" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
     </div>
   </section>
 
