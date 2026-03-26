@@ -132,11 +132,7 @@ const doctorPhotos = {
           {doctor.email && <p class="text-text"><span class="font-semibold">Mail:</span> <a href={`mailto:${doctor.email}`} class="text-azul hover:text-naranja">{doctor.email}</a></p>}
           {doctor.instagram && <p class="text-text"><span class="font-semibold">Instagram:</span> <a href={`https://instagram.com/${doctor.instagram.replace('@','')}`} target="_blank" rel="noopener" class="text-azul hover:text-naranja">{doctor.instagram}</a></p>}
           <p class="text-text"><span class="font-semibold">Horarios:</span> {doctor.hours}</p>
-          {doctor.name === 'Dra. Romero Maria Florencia' ? (
-            <a href="https://wa.me/5493794258531" target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
-          ) : (
-            <a href={`https://api.whatsapp.com/send?phone=${doctor.whatsapp}`} target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
-          )}
+          <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener" class="btn btn-primary rounded-full mt-2 inline-flex items-center justify-center">Consultar</a>
         </div>
       </article>
     ))}
