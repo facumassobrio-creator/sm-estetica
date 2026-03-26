@@ -19,8 +19,8 @@ export const site = {
 
   // Location
   location: {
-    address: "Santa Fé 1238 1er piso",
-    googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+F%C3%A9+1238+1er+piso&output=embed",
+    address: "Santa Fe 1238 1er piso, Corrientes Capital",
+    googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+Fe+1238+1er+piso,+Corrientes,+Argentina&output=embed",
   },
 
   // Hours
@@ -75,7 +75,7 @@ export const site = {
   email: "smesteticafgm@gmail.com",
   whatsapp: "+5493794321439",
   instagram: "@smesteticaintegralctes",
-  direccion: "Santa Fé 1238 1er piso",
-  googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+F%C3%A9+1238+1er+piso&output=embed",
+  direccion: "Santa Fe 1238 1er piso, Corrientes Capital",
+  googleMapsEmbedUrl: "https://www.google.com/maps?q=Santa+Fe+1238+1er+piso,+Corrientes,+Argentina&output=embed",
   desarrollador: "FGM Digital"
 };
