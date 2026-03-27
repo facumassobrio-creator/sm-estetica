@@ -13,7 +13,7 @@ const doctorPhotos = {
 <BaseLayout title={site.brand.name} description={`Inicio de ${site.brand.name}, tu clínica premium de estética médica`}>
   {/* HERO */}
   <section id="inicio" class="anchor-section max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 py-12 fade-in">
-    <div class="flex-1 md:basis-[55%] flex flex-col gap-4 items-start justify-center">
+    <div class="flex-1 md:basis-[55%] flex flex-col gap-4 items-start justify-start md:self-start">
       <h1 class="sr-only">SM Estética Integral</h1>
       <img src="/logo-sm-estetica-v2.png" alt="SM Estética Integral" class="w-80 md:w-[27rem] lg:w-[30rem] h-auto mb-8 mx-auto md:mx-0" loading="eager" decoding="async" />
       <h2 class="text-xl md:text-2xl text-text font-semibold tracking-wide mb-1">Estética corporal - Estética odontológica - Estética facial - Estética capilar</h2>
@@ -23,7 +23,7 @@ const doctorPhotos = {
         <a href="#ubicacion" class="btn btn-secondary">Ver ubicación</a>
       </div>
     </div>
-    <div class="flex-1 md:basis-[45%] flex items-center justify-center w-full md:w-auto">
+    <div class="flex-1 md:basis-[45%] flex items-center md:items-start justify-center w-full md:w-auto md:self-start">
       <div class="relative w-full max-w-sm h-72 sm:h-80 md:max-w-none md:w-full md:h-[30rem] lg:h-[34rem] rounded-xl border-4 border-naranja shadow-inner overflow-hidden slide-up select-none">
         <img src="/hero.png" alt="SM Estetica Integral" class="w-full h-full object-cover" loading="eager" decoding="async" />
         <div class="absolute inset-0 bg-white/15"></div>
